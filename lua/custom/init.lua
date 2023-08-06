@@ -1,0 +1,2 @@
+-- Standard VIM configurations
+-- vim.opt.colorcolumn = "80"
