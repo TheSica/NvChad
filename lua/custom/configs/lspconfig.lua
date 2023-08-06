@@ -17,7 +17,23 @@ lspconfig.clangd.setup({
     on_attach(client, bufnr)
   end,
   capabilities = capabilities,
---  filetypes = {"python"},
+  init_options={
+    clangdFileStatus = true,
+    clangdSemanticHighlighting = true,
+  },
+  cmd = {
+        "clangd",
+        "--pretty",
+        "--header-insertion=iwyu",
+        "--background-index",
+        "--suggest-missing-includes",
+        "-j=40",
+        "--pch-storage=memory",
+        "--clang-tidy",
+        "--compile-commands-dir=.",
+  }
+--root_dir = root_pattern("compile_commands.json", "compile_flags.txt", ".git") or dirname
+
 })
 
 
