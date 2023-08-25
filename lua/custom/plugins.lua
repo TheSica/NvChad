@@ -77,6 +77,14 @@ local plugins = {
       require("core.utils").load_mappings("dap_python")
     end
   },
+  {
+    "akinsho/toggleterm.nvim",
+    event = "BufRead",
+    config = function()
+      require "custom.configs.toggleterm"
+    end,
+    version = "*",
+  },
 }
 
 return plugins
