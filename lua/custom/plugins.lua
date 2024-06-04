@@ -85,6 +85,9 @@ local plugins = {
     end,
     version = "*",
   },
+  {
+    "nvim-neotest/nvim-nio",
+  }
 }
 
 return plugins
